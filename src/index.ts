@@ -2,10 +2,13 @@ import express from 'express'
 import dotenv from 'dotenv'
 import path from 'path'
 import { getDownsampledData } from './controllers/get-downsampled-data'
+import cors from 'cors'
 
 dotenv.config()
 
 const app = express()
+
+app.use(cors())
 
 app.get('/ping', (req, res) => res.send('Success'))
 

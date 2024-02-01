@@ -12,7 +12,7 @@ export const getDownsampledData = async (req: Request, res:Response) => {
   if (cachedDownsampledData.length) return res.json(cachedDownsampledData)
 
   if (cachedCSVData.length) {
-    cachedDownsampledData = LTTB(cachedCSVData, 100)
+    cachedDownsampledData = LTTB(cachedCSVData, 30)
     return res.json(cachedDownsampledData)
   }
 
